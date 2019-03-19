@@ -1,0 +1,30 @@
+192.168.0.5 - Server
+ 
+192.168.0.6 - Client
+
+https://drive.google.com/open?id=1xFRyy7CG7dii713D1ySTUFq8NsxIF108
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64/jre
+
+
+JRE HOME : /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64/jre
+
+ Web UI should redirect unsecured HTTP requests from. [Default: 8080]
+
+eb UI should listen for secure HTTPS requests. [Default: 8443]
+
+ 	
+
+JMS agent communication. [Default: 7918]
+
+
+wss://192.168.0.5:8443 @192.168.0.5
+
+
+https://192.168.0.5:8443
+
+yum install -y iptables-services
+systemctl enable iptables-services
+iptables -I INPUT 1 -p tcp --dport=8443 -j ACCEPT
+service iptables save
+
+
